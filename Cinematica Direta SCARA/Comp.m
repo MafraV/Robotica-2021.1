@@ -1,6 +1,6 @@
 L1 = Link('d',0, 'a',0.2, 'alpha',0);
 L2 = Link('d',0, 'a',0.15, 'alpha',0);
-L3 = Link('d',0, 'a',0, 'alpha', pi/2);
+L3 = Link('d',0, 'a',0, 'alpha', pi);
 L4 = Link('theta',0, 'a',0, 'alpha',0, 'qlim',[0,0.1]);
 l = SerialLink([L1,L2,L3,L4]);
 
@@ -39,7 +39,7 @@ function f = Fkine(theta1, theta2, theta3, d4)
     TAB = Z2*X2;
 
     Z3 = [c3 -s3 0 0; s3 c3 0 0; 0 0 1 0; 0 0 0 1];
-    X3 = [1 0 0 0; 0 0 -1 0; 0 1 0 0; 0 0 0 1];
+    X3 = [1 0 0 0; 0 -1 0 0; 0 0 -1 0; 0 0 0 1];
     TBE1 = Z3*X3;
 
     Z4 = [1 0 0 0; 0 1 0 0; 0 0 1 d4; 0 0 0 1];
